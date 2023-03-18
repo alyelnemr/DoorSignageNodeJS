@@ -29,11 +29,35 @@ console.log(" query :" + query);
     }
   }
  
+async function getConfiguration() {
+    try {
+      var query = `select duration, doctorNameENTop, doctorNameENFontSize, doctorNameARTop, doctorNameARFontSize, specialtyENTop, specialtyENFontSize, specialtyARTop, specialtyARFontSize
+      , clinicDateTop, clinicDateFontSize
+      from
+      (
+        select ConfigValue, ConfigKey
+        from tblConfiguration
+      ) d
+      pivot
+      (
+        max(ConfigValue)
+        for ConfigKey in (duration, doctorNameENTop, doctorNameENFontSize, doctorNameARTop, doctorNameARFontSize, specialtyENTop, specialtyENFontSize, specialtyARTop, specialtyARFontSize
+      , clinicDateTop, clinicDateFontSize)
+      ) piv`;
+console.log(" query :" + query);
+      let pool = await sql.connect(config.config_queue);
+      let res = await pool.request().query(query,);
+      return res.recordsets[0][0];
+    } catch (error) {
+      console.log(" db-error :" + error);
+    }
+  }
+ 
 async function getDataByClinicID(cliniID=1) {
     try {
       var query = `SELECT        
 	  ID, DoctorNameAR, DoctorNameEN, ClinicID, SpecialtyAR, SpecialtyEN, ClinicStartDate, ClinicEndDate, 
-	  'http://10.102.111.30:1020/api/getImageByID/' +cast(id as varchar) as ImagePath, ImageBinary
+	  'http://10.102.111.88:1020/api/getImageByID/' +cast(id as varchar) as ImagePath, ImageBinary
       FROM            Room
         WHERE ID = @RoomID`;
       let pool = await sql.connect(config.config_queue);
@@ -47,12 +71,13 @@ async function getDataByClinicID(cliniID=1) {
 async function getClinicByIPAddress(clinicIPAddress=1) {
     try {
       var query = `
-      SELECT    Clinic.ID,    Clinic.ClinicName as ClinicNameEN, Clinic.ClinicName as ClinicNameAR, 
-      Physician.Name AS DoctorNameAR, Physician.NameEn AS DoctorNameEN, 
-      Clinic.Speciality, Clinic.DateTimeFrom, Clinic.DateTimeTo, Room.Name AS RoomName, 
-      Clinic.SpecialityEn as SpecialtyAR, Clinic.SpecialityEn as SpecialtyEN, 
-      Area.AreaName, Room.AreaID, Room.ComputerIPNumber, 'http://10.102.111.30:1020/api/getImageByID/' +cast(Room.ID as varchar) as ImagePath, 
-      'http://10.102.111.30:1020/api/getImageEmptyByID/' +cast(Room.ID as varchar) as ImagePathEmpty
+      SELECT    Clinic.ID,  isnull(Clinic.ClinicName, '') as ClinicNameEN, isnull(Clinic.ClinicName, '') as ClinicNameAR, 
+      isnull(Physician.Name, '') AS DoctorNameAR, isnull(Physician.NameEn, '') AS DoctorNameEN, 
+      Clinic.DateTimeFrom as ClinicStartDate, Clinic.DateTimeTo as ClinicEndDate, Room.Name AS RoomName, Room.ID AS RoomID, 
+      isnull(Clinic.Speciality, '') as SpecialtyAR, isnull(Clinic.Speciality, '') as SpecialtyEN, 
+      Area.AreaName, Room.AreaID, Room.ComputerIPNumber, 'http://10.102.111.88:1020/api/getImageByID/' +cast(Room.ID as varchar) as ImagePath, 
+      'http://10.102.111.88:1020/api/getImageEmptyByID/' +cast(Room.ID as varchar) as ImagePathEmpty, 
+      isnull(RefreshImage, 0) as RefreshImage, isnull(DisplayTime, 1) as DisplayTime
       FROM            Room INNER JOIN
       Clinic ON Room.ID = Clinic.PlannedRoomID INNER JOIN
       Physician ON Clinic.PhysicianID = Physician.ID AND Clinic.Active = 1 AND Clinic.StatusID = 2 INNER JOIN
@@ -69,12 +94,13 @@ WHERE        (Room.AreaID = 2) AND (Room.ComputerIPNumber = @ClinicIPAddress)`;
 async function getClinicByForceIPAddress(clinicIPAddress=1) {
     try {
       var query = `
-      SELECT    Clinic.ID,    Clinic.ClinicName as ClinicNameEN, Clinic.ClinicName as ClinicNameAR, 
-      Physician.Name AS DoctorNameAR, Physician.NameEn AS DoctorNameEN, 
-      Clinic.Speciality, Clinic.DateTimeFrom, Clinic.DateTimeTo, Room.Name AS RoomName, 
-      Clinic.SpecialityEn as SpecialtyAR, Clinic.SpecialityEn as SpecialtyEN, 
-      Area.AreaName, Room.AreaID, Room.ComputerIPNumber, 'http://10.102.111.30:1020/api/getImageByID/' +cast(Room.ID as varchar) as ImagePath, 
-      'http://10.102.111.30:1020/api/getImageEmptyByID/' +cast(Room.ID as varchar) as ImagePathEmpty
+      SELECT    Clinic.ID,  isnull(Clinic.ClinicName, '') as ClinicNameEN, isnull(Clinic.ClinicName, '') as ClinicNameAR, 
+      isnull(Physician.Name, '') AS DoctorNameAR, isnull(Physician.NameEn, '') AS DoctorNameEN, 
+      Clinic.DateTimeFrom as ClinicStartDate, Clinic.DateTimeTo as ClinicEndDate, Room.Name AS RoomName, Room.ID AS RoomID, 
+      isnull(Clinic.Speciality, '') as SpecialtyAR, isnull(Clinic.Speciality, '') as SpecialtyEN, 
+      Area.AreaName, Room.AreaID, Room.ComputerIPNumber, 'http://10.102.111.88:1020/api/getImageByID/' +cast(Room.ID as varchar) as ImagePath, 
+      'http://10.102.111.88:1020/api/getImageEmptyByID/' +cast(Room.ID as varchar) as ImagePathEmpty, 
+      isnull(RefreshImage, 0) as RefreshImage, isnull(DisplayTime, 1) as DisplayTime
       FROM            Room INNER JOIN
       Clinic ON Room.ID = Clinic.PlannedRoomID INNER JOIN
       Physician ON Clinic.PhysicianID = Physician.ID AND Clinic.Active = 1 AND Clinic.StatusID = 2 INNER JOIN
@@ -127,5 +153,6 @@ module.exports = {
   getClinicByIPAddress: getClinicByIPAddress,
   getClinicByForceIPAddress: getClinicByForceIPAddress,
   getImageByID: getImageByID,
+  getConfiguration: getConfiguration,
   getDuration: getDuration
 };

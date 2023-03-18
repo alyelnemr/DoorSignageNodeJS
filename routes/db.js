@@ -12,8 +12,8 @@ router.get('/getDuration', function(req, res, next) {
 });
 
 /* GET home page. */
-router.get('/getAllClinics', function(req, res, next) {
-  var result = sql.getAllClinics().then((value) =>{
+router.get('/getConfiguration', function(req, res, next) {
+  var result = sql.getConfiguration().then((value) =>{
     res.status(200).send(value);
   });
 });
