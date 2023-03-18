@@ -5673,3 +5673,39 @@ WHERE        (ConfigName = 'Duration')
 [0mGET /api/getDuration/ [32m200 [0m46.504 ms - 2[0m
  db-error :RequestError: Invalid object name 'tblDoctorSchedule'.
 [0mGET /api/getClinicByIPAddress/device [32m200 [0m28.177 ms - -[0m
+p.jpg
+\\hjh-queue-01\door_signage_images\p.jpg exists
+[0mGET /api/getImageByID/9 [32m200 [0m241.085 ms - -[0m
+p.jpg
+\\hjh-queue-01\door_signage_images\p.jpg exists
+[0mGET /api/getImageByID/9 [32m200 [0m12.827 ms - -[0m
+p.jpg
+\\hjh-queue-01\door_signage_images\p.jpg exists
+[0mGET /api/getImageByID/9 [32m200 [0m43.671 ms - -[0m
+1.jpg
+\\hjh-queue-01\door_signage_images\1.jpg exists
+[0mGET /api/getImageByID/9 [32m200 [0m8.260 ms - -[0m
+d.jpg
+\\hjh-queue-01\door_signage_images\d.jpg exists
+[0mGET /api/getImageByID/9 [32m200 [0m15.598 ms - -[0m
+doctor 2.jpg
+\\hjh-queue-01\door_signage_images\doctor 2.jpg exists
+[0mGET /api/getImageByID/9 [32m200 [0m12.621 ms - -[0m
+undefined
+[0mGET /api/getImageEmptyByID/9 [33m404 [0m254.634 ms - -[0m
+\\hjh-queue-01\door_signage_images\undefined does not exist
+undefined
+\\hjh-queue-01\door_signage_images\undefined does not exist
+[0mGET /api/getImageEmptyByID/9 [33m404 [0m8.997 ms - -[0m
+undefined
+\\hjh-queue-01\door_signage_images\undefined does not exist
+[0mGET /api/getImageEmptyByID/9 [33m404 [0m40.944 ms - -[0m
+d01.png
+\\hjh-queue-01\door_signage_images\d01.png exists
+[0mGET /api/getImageEmptyByID/9 [32m200 [0m211.565 ms - -[0m
+ query :SELECT RowID, ConfigKey, ConfigValue
+FROM            tblConfiguration
+WHERE        (ConfigKey = 'Duration')
+ db-error :RequestError: Invalid column name 'RowID'.
+[0mGET /api/getDuration/ [32m200 [0m213.102 ms - -[0m
+[0mGET /favicon.ico [33m404 [0m3315.249 ms - 992[0m
