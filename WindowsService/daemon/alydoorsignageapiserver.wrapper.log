@@ -1,0 +1,2 @@
+2023-03-16 14:36:49 - Starting C:\Program Files (x86)\nodejs\node.exe  --harmony C:\Aly\api_server\node_modules\node-windows\lib\wrapper.js --file C:\Aly\api_server\WindowsService\www --scriptoptions= --log "alyDoorSignageAPIServer wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2023-03-16 14:36:49 - Started 11280

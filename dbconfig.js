@@ -26,7 +26,7 @@ const config_queue = {
     database: "QMS",
     driver: "msnodesqlv8",
     options: {
-      database: 'dbDoorSignage',
+      database: 'QMS',
       trustedconnection: true,
       trustServerCertificate: true,
       enableArithAbort: true,

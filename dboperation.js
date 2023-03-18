@@ -45,6 +45,7 @@ async function getDuration() {
       var query = `SELECT RowID, ConfigName, ConfigValue, ConfigDescription
 FROM            tlbConfiguration
 WHERE        (ConfigName = 'Duration')`;
+console.log(" query :" + query);
       let pool = await sql.connect(config.config_queue);
       let res = await pool.request().query(query,);
       return res.recordsets[0][0]["ConfigValue"];
