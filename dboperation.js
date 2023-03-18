@@ -47,11 +47,17 @@ async function getDataByClinicID(cliniID=1) {
 async function getClinicByIPAddress(clinicIPAddress=1) {
     try {
       var query = `
-	  select d.ID, DoctorNameAR, DoctorNameEN, ClinicID, ClinicNameAR, ClinicNameEN, SpecialtyAR, SpecialtyEN, ClinicStartDate, ClinicEndDate, 
-	  'http://10.102.111.30:1020/api/getImageByID/' +cast(d.id as varchar) as ImagePath, RefreshImage, DisplayTime
-      FROM            tblDoctorSchedule d inner join
-        tblClinic c on d.ClinicID = c.ID 
-  where [ClinicIPAddress] = @ClinicIPAddress`;
+      SELECT    Clinic.ID,    Clinic.ClinicName as ClinicNameEN, Clinic.ClinicName as ClinicNameAR, 
+      Physician.Name AS DoctorNameAR, Physician.NameEn AS DoctorNameEN, 
+      Clinic.Speciality, Clinic.DateTimeFrom, Clinic.DateTimeTo, Room.Name AS RoomName, 
+      Clinic.SpecialityEn as SpecialtyAR, Clinic.SpecialityEn as SpecialtyEN, 
+      Area.AreaName, Room.AreaID, Room.ComputerIPNumber, 'http://10.102.111.30:1020/api/getImageByID/' +cast(Room.ID as varchar) as ImagePath, 
+      'http://10.102.111.30:1020/api/getImageEmptyByID/' +cast(Room.ID as varchar) as ImagePathEmpty
+      FROM            Room INNER JOIN
+      Clinic ON Room.ID = Clinic.PlannedRoomID INNER JOIN
+      Physician ON Clinic.PhysicianID = Physician.ID AND Clinic.Active = 1 AND Clinic.StatusID = 2 INNER JOIN
+      Area ON Room.AreaID = Area.AreaID
+WHERE        (Room.AreaID = 2) AND (Room.ComputerIPNumber = @ClinicIPAddress)`;
       let pool = await sql.connect(config.config_queue);
       let res = await pool.request().input('clinicIPAddress', sql.VarChar, clinicIPAddress).query(query,);
       return res.recordsets[0][0];

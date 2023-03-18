@@ -5709,3 +5709,14 @@ WHERE        (ConfigKey = 'Duration')
  db-error :RequestError: Invalid column name 'RowID'.
 [0mGET /api/getDuration/ [32m200 [0m213.102 ms - -[0m
 [0mGET /favicon.ico [33m404 [0m3315.249 ms - 992[0m
+ query :SELECT ConfigKey, ConfigValue
+FROM            tblConfiguration
+WHERE        (ConfigKey = 'Duration')
+[0mGET /api/getDuration/ [32m200 [0m297.130 ms - 3[0m
+ query :SELECT ConfigKey, ConfigValue
+FROM            tblConfiguration
+WHERE        (ConfigKey = 'Duration')
+[0mGET /api/getDuration/ [32m200 [0m7.573 ms - 3[0m
+::1
+
+[0mGET /api/getClinicByForceIPAddress/1 [32m200 [0m238.558 ms - -[0m

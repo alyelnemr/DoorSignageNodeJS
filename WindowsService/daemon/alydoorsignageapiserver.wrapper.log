@@ -80,3 +80,19 @@
 2023-03-18 15:04:04 - Finished alydoorsignageapiserver.exe
 2023-03-18 15:04:05 - Starting C:\Program Files (x86)\nodejs\node.exe  --harmony C:\Aly\api_server\node_modules\node-windows\lib\wrapper.js --file C:\Aly\api_server\WindowsService\www --scriptoptions= --log "alyDoorSignageAPIServer wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
 2023-03-18 15:04:05 - Started 6180
+2023-03-18 15:06:51 - Stopping alydoorsignageapiserver.exe
+2023-03-18 15:06:51 - ProcessKill 6180
+2023-03-18 15:06:51 - Found child process: 9248 Name: conhost.exe
+2023-03-18 15:06:51 - Found child process: 6204 Name: node.exe
+2023-03-18 15:06:51 - Stopping process 9248
+2023-03-18 15:06:51 - Send SIGINT 9248
+2023-03-18 15:06:51 - SIGINT to 9248 failed - Killing as fallback
+2023-03-18 15:06:51 - Stopping process 6204
+2023-03-18 15:06:51 - Send SIGINT 6204
+2023-03-18 15:06:51 - SIGINT to 6204 failed - Killing as fallback
+2023-03-18 15:06:51 - Stopping process 6180
+2023-03-18 15:06:51 - Send SIGINT 6180
+2023-03-18 15:06:51 - SIGINT to 6180 failed - Killing as fallback
+2023-03-18 15:06:51 - Finished alydoorsignageapiserver.exe
+2023-03-18 15:10:56 - Starting C:\Program Files (x86)\nodejs\node.exe  --harmony C:\Aly\api_server\node_modules\node-windows\lib\wrapper.js --file C:\Aly\api_server\WindowsService\www --scriptoptions= --log "alyDoorSignageAPIServer wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2023-03-18 15:10:56 - Started 2200
