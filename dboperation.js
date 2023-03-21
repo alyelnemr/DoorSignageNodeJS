@@ -80,9 +80,9 @@ async function getClinicByIPAddress(clinicIPAddress=1) {
       isnull(RefreshImage, 0) as RefreshImage, isnull(DisplayTime, 1) as DisplayTime
       FROM            Room INNER JOIN
       Clinic ON Room.ID = Clinic.PlannedRoomID INNER JOIN
-      Physician ON Clinic.PhysicianID = Physician.ID AND Clinic.Active = 1 AND Clinic.StatusID = 2 INNER JOIN
+      Physician ON Clinic.PhysicianID = Physician.ID INNER JOIN
       Area ON Room.AreaID = Area.AreaID
-WHERE        (Room.AreaID = 1) AND (Room.ComputerIPNumber = @ClinicIPAddress)`;
+WHERE        (Room.AreaID = 1) AND Clinic.Active = 1 AND Clinic.StatusID = 2 AND (Room.ComputerIPNumber = @ClinicIPAddress)`;
       let pool = await sql.connect(config.config_queue);
       let res = await pool.request().input('clinicIPAddress', sql.VarChar, clinicIPAddress).query(query,);
       return res.recordsets[0][0];
@@ -103,9 +103,9 @@ async function getClinicByForceIPAddress(clinicIPAddress=1) {
       isnull(RefreshImage, 0) as RefreshImage, isnull(DisplayTime, 1) as DisplayTime
       FROM            Room INNER JOIN
       Clinic ON Room.ID = Clinic.PlannedRoomID INNER JOIN
-      Physician ON Clinic.PhysicianID = Physician.ID AND Clinic.Active = 1 AND Clinic.StatusID = 2 INNER JOIN
+      Physician ON Clinic.PhysicianID = Physician.ID INNER JOIN
       Area ON Room.AreaID = Area.AreaID
-WHERE        (Room.AreaID = 2) AND (Room.ComputerIPNumber = @ClinicIPAddress)`;
+WHERE        (Room.AreaID = 1) AND Clinic.Active = 1 AND Clinic.StatusID = 2 AND (Room.ComputerIPNumber = @ClinicIPAddress)`;
       let pool = await sql.connect(config.config_queue);
       let res = await pool.request().input('clinicIPAddress', sql.VarChar, clinicIPAddress).query(query,);
       return res.recordsets[0][0];

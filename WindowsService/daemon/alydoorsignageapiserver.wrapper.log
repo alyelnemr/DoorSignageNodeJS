@@ -272,3 +272,52 @@
 2023-03-19 17:37:19 - Finished alydoorsignageapiserver.exe
 2023-03-19 17:37:23 - Starting C:\Program Files (x86)\nodejs\node.exe  --harmony C:\Aly\api_server\node_modules\node-windows\lib\wrapper.js --file C:\Aly\api_server\WindowsService\www --scriptoptions= --log "alyDoorSignageAPIServer wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
 2023-03-19 17:37:27 - Started 2136
+2023-03-19 20:40:42 - Stopping alydoorsignageapiserver.exe
+2023-03-19 20:40:42 - ProcessKill 2136
+2023-03-19 20:40:43 - Shutdown exception
+Message:A system shutdown is in progress. (Exception from HRESULT: 0x8007045B)
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2023-03-20 12:15:19 - Starting C:\Program Files (x86)\nodejs\node.exe  --harmony C:\Aly\api_server\node_modules\node-windows\lib\wrapper.js --file C:\Aly\api_server\WindowsService\www --scriptoptions= --log "alyDoorSignageAPIServer wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2023-03-20 12:15:19 - Started 7660
+2023-03-20 19:33:15 - Starting C:\Program Files (x86)\nodejs\node.exe  --harmony C:\Aly\api_server\node_modules\node-windows\lib\wrapper.js --file C:\Aly\api_server\WindowsService\www --scriptoptions= --log "alyDoorSignageAPIServer wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2023-03-20 19:33:15 - Started 7136
+2023-03-21 14:35:50 - Stopping alydoorsignageapiserver.exe
+2023-03-21 14:35:50 - ProcessKill 7136
+2023-03-21 14:35:51 - Found child process: 7148 Name: conhost.exe
+2023-03-21 14:35:51 - Found child process: 7600 Name: node.exe
+2023-03-21 14:35:51 - Stopping process 7148
+2023-03-21 14:35:51 - Send SIGINT 7148
+2023-03-21 14:35:51 - SIGINT to 7148 failed - Killing as fallback
+2023-03-21 14:35:51 - Stopping process 7600
+2023-03-21 14:35:51 - Send SIGINT 7600
+2023-03-21 14:35:51 - SIGINT to 7600 failed - Killing as fallback
+2023-03-21 14:35:51 - Stopping process 7136
+2023-03-21 14:35:51 - Send SIGINT 7136
+2023-03-21 14:35:51 - SIGINT to 7136 failed - Killing as fallback
+2023-03-21 14:35:51 - Finished alydoorsignageapiserver.exe
+2023-03-21 14:35:55 - Starting C:\Program Files (x86)\nodejs\node.exe  --harmony C:\Aly\api_server\node_modules\node-windows\lib\wrapper.js --file C:\Aly\api_server\WindowsService\www --scriptoptions= --log "alyDoorSignageAPIServer wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2023-03-21 14:35:55 - Started 12440
+2023-03-21 14:38:29 - Stopping alydoorsignageapiserver.exe
+2023-03-21 14:38:29 - ProcessKill 12440
+2023-03-21 14:38:29 - Found child process: 12164 Name: conhost.exe
+2023-03-21 14:38:29 - Found child process: 8188 Name: node.exe
+2023-03-21 14:38:29 - Stopping process 12164
+2023-03-21 14:38:29 - Send SIGINT 12164
+2023-03-21 14:38:29 - SIGINT to 12164 failed - Killing as fallback
+2023-03-21 14:38:29 - Stopping process 8188
+2023-03-21 14:38:29 - Send SIGINT 8188
+2023-03-21 14:38:29 - SIGINT to 8188 failed - Killing as fallback
+2023-03-21 14:38:29 - Stopping process 12440
+2023-03-21 14:38:29 - Send SIGINT 12440
+2023-03-21 14:38:29 - SIGINT to 12440 failed - Killing as fallback
+2023-03-21 14:38:29 - Finished alydoorsignageapiserver.exe
+2023-03-21 14:38:31 - Starting C:\Program Files (x86)\nodejs\node.exe  --harmony C:\Aly\api_server\node_modules\node-windows\lib\wrapper.js --file C:\Aly\api_server\WindowsService\www --scriptoptions= --log "alyDoorSignageAPIServer wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2023-03-21 14:38:31 - Started 4796
