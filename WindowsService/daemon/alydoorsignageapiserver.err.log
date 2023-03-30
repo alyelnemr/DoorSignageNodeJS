@@ -1,0 +1,288 @@
+C:\Aly\api_server\routes\db.js:35
+    console.log("Calling: getClinicByIPAddress value: " + value['ImagePath']);
+                                                               ^
+
+TypeError: Cannot read properties of undefined (reading 'ImagePath')
+    at C:\Aly\api_server\routes\db.js:35:64
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Node.js v18.15.0
+C:\Aly\api_server\routes\db.js:35
+    console.log("Calling: getClinicByIPAddress value: " + value['ImagePath']);
+                                                               ^
+
+TypeError: Cannot read properties of undefined (reading 'ImagePath')
+    at C:\Aly\api_server\routes\db.js:35:64
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Node.js v18.15.0
+C:\Aly\api_server\routes\db.js:35
+    console.log("Calling: getClinicByIPAddress value: " + value['ImagePath']);
+                                                               ^
+
+TypeError: Cannot read properties of undefined (reading 'ImagePath')
+    at C:\Aly\api_server\routes\db.js:35:64
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Node.js v18.15.0
+C:\Aly\api_server\routes\db.js:35
+    console.log("Calling: getClinicByIPAddress value: " + value['ImagePath']);
+                                                               ^
+
+TypeError: Cannot read properties of undefined (reading 'ImagePath')
+    at C:\Aly\api_server\routes\db.js:35:64
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Node.js v18.15.0
+C:\Aly\api_server\routes\db.js:35
+    console.log("Calling: getClinicByIPAddress value: " + value['ImagePath']);
+                                                               ^
+
+TypeError: Cannot read properties of undefined (reading 'ImagePath')
+    at C:\Aly\api_server\routes\db.js:35:64
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Node.js v18.15.0
+C:\Aly\api_server\routes\db.js:35
+    console.log("Calling: getClinicByIPAddress value: " + value['ImagePath']);
+                                                               ^
+
+TypeError: Cannot read properties of undefined (reading 'ImagePath')
+    at C:\Aly\api_server\routes\db.js:35:64
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Node.js v18.15.0
+C:\Aly\api_server\routes\db.js:35
+    console.log("Calling: getClinicByIPAddress value: " + value['ImagePath']);
+                                                               ^
+
+TypeError: Cannot read properties of undefined (reading 'ImagePath')
+    at C:\Aly\api_server\routes\db.js:35:64
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Node.js v18.15.0
+C:\Aly\api_server\routes\db.js:35
+    console.log("Calling: getClinicByIPAddress value: " + value['ImagePath']);
+                                                               ^
+
+TypeError: Cannot read properties of undefined (reading 'ImagePath')
+    at C:\Aly\api_server\routes\db.js:35:64
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Node.js v18.15.0
+C:\Aly\api_server\routes\db.js:35
+    console.log("Calling: getClinicByIPAddress value: " + value['ImagePath']);
+                                                               ^
+
+TypeError: Cannot read properties of undefined (reading 'ImagePath')
+    at C:\Aly\api_server\routes\db.js:35:64
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Node.js v18.15.0
+C:\Aly\api_server\routes\db.js:36
+    console.log("Calling: getClinicByIPAddress value: " + value['ImagePath']);
+                                                               ^
+
+TypeError: Cannot read properties of undefined (reading 'ImagePath')
+    at C:\Aly\api_server\routes\db.js:36:64
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Node.js v18.15.0
+C:\Aly\api_server\routes\db.js:36
+    console.log("Calling: getClinicByIPAddress value: " + value['ImagePath']);
+                                                               ^
+
+TypeError: Cannot read properties of undefined (reading 'ImagePath')
+    at C:\Aly\api_server\routes\db.js:36:64
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Node.js v18.15.0
+C:\Aly\api_server\routes\db.js:36
+    console.log("Calling: getClinicByIPAddress value: " + value['ImagePath']);
+                                                               ^
+
+TypeError: Cannot read properties of undefined (reading 'ImagePath')
+    at C:\Aly\api_server\routes\db.js:36:64
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Node.js v18.15.0
+C:\Aly\api_server\routes\db.js:36
+    console.log("Calling: getClinicByIPAddress value: " + value['ImagePath']);
+                                                               ^
+
+TypeError: Cannot read properties of undefined (reading 'ImagePath')
+    at C:\Aly\api_server\routes\db.js:36:64
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Node.js v18.15.0
+C:\Aly\api_server\routes\db.js:36
+    console.log("Calling: getClinicByIPAddress value: " + value['ImagePath']);
+                                                               ^
+
+TypeError: Cannot read properties of undefined (reading 'ImagePath')
+    at C:\Aly\api_server\routes\db.js:36:64
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Node.js v18.15.0
+ReferenceError: C:\Aly\api_server\views\error.jade:4
+    2| 
+    3| block content
+  > 4|   h1= message
+    5|   h2= error.status
+    6|   pre #{error.stack}
+    7| 
+
+title is not defined
+    at eval (eval at exports.compile (C:\Aly\api_server\node_modules\jade\lib\jade.js:171:8), <anonymous>:18:58)
+    at C:\Aly\api_server\node_modules\jade\lib\jade.js:172:35
+    at exports.render (C:\Aly\api_server\node_modules\jade\lib\jade.js:206:14)
+    at exports.renderFile [as engine] (C:\Aly\api_server\node_modules\jade\lib\jade.js:233:13)
+    at View.render (C:\Aly\api_server\node_modules\express\lib\view.js:135:8)
+    at tryRender (C:\Aly\api_server\node_modules\express\lib\application.js:657:10)
+    at Function.render (C:\Aly\api_server\node_modules\express\lib\application.js:609:3)
+    at ServerResponse.render (C:\Aly\api_server\node_modules\express\lib\response.js:1039:7)
+    at C:\Aly\api_server\app.js:40:7
+    at Layer.handle_error (C:\Aly\api_server\node_modules\express\lib\router\layer.js:71:5)
+C:\Aly\api_server\routes\db.js:36
+    console.log("Calling: getClinicByIPAddress value: " + value['ImagePath']);
+                                                               ^
+
+TypeError: Cannot read properties of undefined (reading 'ImagePath')
+    at C:\Aly\api_server\routes\db.js:36:64
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Node.js v18.15.0
+node:internal/errors:490
+    ErrorCaptureStackTrace(err);
+    ^
+
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:663:11)
+    at ServerResponse.header (C:\Aly\api_server\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.json (C:\Aly\api_server\node_modules\express\lib\response.js:275:10)
+    at ServerResponse.send (C:\Aly\api_server\node_modules\express\lib\response.js:162:21)
+    at C:\Aly\api_server\routes\db.js:40:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+
+Node.js v18.15.0
+node:internal/errors:490
+    ErrorCaptureStackTrace(err);
+    ^
+
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:663:11)
+    at ServerResponse.header (C:\Aly\api_server\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.json (C:\Aly\api_server\node_modules\express\lib\response.js:275:10)
+    at ServerResponse.send (C:\Aly\api_server\node_modules\express\lib\response.js:162:21)
+    at C:\Aly\api_server\routes\db.js:40:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+
+Node.js v18.15.0
+node:internal/errors:490
+    ErrorCaptureStackTrace(err);
+    ^
+
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:663:11)
+    at ServerResponse.header (C:\Aly\api_server\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.json (C:\Aly\api_server\node_modules\express\lib\response.js:275:10)
+    at ServerResponse.send (C:\Aly\api_server\node_modules\express\lib\response.js:162:21)
+    at C:\Aly\api_server\routes\db.js:40:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+
+Node.js v18.15.0
+node:internal/errors:490
+    ErrorCaptureStackTrace(err);
+    ^
+
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:663:11)
+    at ServerResponse.header (C:\Aly\api_server\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.json (C:\Aly\api_server\node_modules\express\lib\response.js:275:10)
+    at ServerResponse.send (C:\Aly\api_server\node_modules\express\lib\response.js:162:21)
+    at C:\Aly\api_server\routes\db.js:40:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+
+Node.js v18.15.0
+node:internal/errors:490
+    ErrorCaptureStackTrace(err);
+    ^
+
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:663:11)
+    at ServerResponse.header (C:\Aly\api_server\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.json (C:\Aly\api_server\node_modules\express\lib\response.js:275:10)
+    at ServerResponse.send (C:\Aly\api_server\node_modules\express\lib\response.js:162:21)
+    at C:\Aly\api_server\routes\db.js:40:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+
+Node.js v18.15.0
+node:internal/errors:490
+    ErrorCaptureStackTrace(err);
+    ^
+
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:663:11)
+    at ServerResponse.header (C:\Aly\api_server\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.json (C:\Aly\api_server\node_modules\express\lib\response.js:275:10)
+    at ServerResponse.send (C:\Aly\api_server\node_modules\express\lib\response.js:162:21)
+    at C:\Aly\api_server\routes\db.js:40:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+
+Node.js v18.15.0
+ReferenceError: C:\Aly\api_server\views\error.jade:4
+    2| 
+    3| block content
+  > 4|   h1= message
+    5|   h2= error.status
+    6|   pre #{error.stack}
+    7| 
+
+title is not defined
+    at eval (eval at exports.compile (C:\Aly\api_server\node_modules\jade\lib\jade.js:171:8), <anonymous>:18:58)
+    at C:\Aly\api_server\node_modules\jade\lib\jade.js:172:35
+    at exports.render (C:\Aly\api_server\node_modules\jade\lib\jade.js:206:14)
+    at exports.renderFile [as engine] (C:\Aly\api_server\node_modules\jade\lib\jade.js:233:13)
+    at View.render (C:\Aly\api_server\node_modules\express\lib\view.js:135:8)
+    at tryRender (C:\Aly\api_server\node_modules\express\lib\application.js:657:10)
+    at Function.render (C:\Aly\api_server\node_modules\express\lib\application.js:609:3)
+    at ServerResponse.render (C:\Aly\api_server\node_modules\express\lib\response.js:1039:7)
+    at C:\Aly\api_server\app.js:40:7
+    at Layer.handle_error (C:\Aly\api_server\node_modules\express\lib\router\layer.js:71:5)
+ReferenceError: C:\Aly\api_server\views\error.jade:4
+    2| 
+    3| block content
+  > 4|   h1= message
+    5|   h2= error.status
+    6|   pre #{error.stack}
+    7| 
+
+title is not defined
+    at eval (eval at exports.compile (C:\Aly\api_server\node_modules\jade\lib\jade.js:171:8), <anonymous>:18:58)
+    at C:\Aly\api_server\node_modules\jade\lib\jade.js:172:35
+    at exports.render (C:\Aly\api_server\node_modules\jade\lib\jade.js:206:14)
+    at exports.renderFile [as engine] (C:\Aly\api_server\node_modules\jade\lib\jade.js:233:13)
+    at View.render (C:\Aly\api_server\node_modules\express\lib\view.js:135:8)
+    at tryRender (C:\Aly\api_server\node_modules\express\lib\application.js:657:10)
+    at Function.render (C:\Aly\api_server\node_modules\express\lib\application.js:609:3)
+    at ServerResponse.render (C:\Aly\api_server\node_modules\express\lib\response.js:1039:7)
+    at C:\Aly\api_server\app.js:40:7
+    at Layer.handle_error (C:\Aly\api_server\node_modules\express\lib\router\layer.js:71:5)
