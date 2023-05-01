@@ -12,6 +12,14 @@ router.get('/getDuration', function(req, res, next) {
 });
 
 /* GET home page. */
+router.get('/getIP', function(req, res, next) {
+  const { ipaddress } = req.params;
+  var all_add = req.socket.remoteAddress.split(':');
+  var add = all_add[all_add.length - 1];
+  res.status(200).send(add);
+});
+
+/* GET home page. */
 router.get('/getConfiguration', function(req, res, next) {
   var result = sql.getConfiguration().then((value) =>{
     res.status(200).send(value);
@@ -29,12 +37,19 @@ router.get('/getClinicByID/:id', function(req, res, next) {
 /* GET home page. */
 router.get('/getClinicByIPAddress/:ipaddress', function(req, res, next) {
   const { ipaddress } = req.params;
+  console.log("Calling from: " + ipaddress);
   var all_add = req.socket.remoteAddress.split(':');
   var add = all_add[all_add.length - 1];
   console.log("Calling: getClinicByIPAddress from: " + add);
   var result = sql.getClinicByIPAddress(add).then((value) =>{
-    // console.log("Calling: getClinicByIPAddress value: " + value);
-    res.status(200).send(value);
+    if(value == undefined) {
+      var result = sql.getClinicEmptyByIPAddress(add).then((value1) =>{
+        console.log("UNDEFINED: getClinicEmptyByIPAddress value1: " + value1);
+        res.status(200).send(value1);
+      });  
+    }else {
+      res.status(200).send(value);
+    }
   });
 });
 
@@ -105,6 +120,61 @@ router.get('/getUpdate', function(req, res, next) {
         res.end(imgPath + "<h1> No Update </h1>");
       } else {
         res.writeHead(200, {"Content-type" : "application/vnd.android.package-archive", 'aly-test': 'doct_name'});
+        res.end(content);
+      }
+    });
+});
+
+
+/* GET home page. */
+router.get('/getEmptyImage', function(req, res, next) {
+    imgPath = "\\\\hjh-queue-01\\door_signage_images\\empty.jpg";
+    fs.access(imgPath, fs.constants.F_OK, err => {
+      console.log(`${imgPath} ${err ? "does not exist" : "exists"}`);
+    });
+    fs.readFile(imgPath, function(err, content) {
+      if (err) {
+        res.writeHead(404, { "Content-type" : "text/html" });
+        res.end(imgPath + "<h1> No Update </h1>");
+      } else {
+        res.writeHead(200, {"Content-type" : "image/png"});
+        res.end(content);
+      }
+    });
+});
+
+
+/* GET home page. */
+router.get('/getIPDImageByID/:id', function(req, res, next) {
+    const { id } = req.params;
+    imgPath = "\\\\hjh-queue-01\\door_signage_images\\ipd" + id + ".png";
+    fs.access(imgPath, fs.constants.F_OK, err => {
+      console.log(`${imgPath} ${err ? "does not exist" : "exists"}`);
+    });
+    fs.readFile(imgPath, function(err, content) {
+      if (err) {
+        res.writeHead(404, { "Content-type" : "text/html" });
+        res.end(imgPath + "<h1> No Update </h1>");
+      } else {
+        res.writeHead(200, {"Content-type" : "image/png"});
+        res.end(content);
+      }
+    });
+});
+
+
+/* GET home page. */
+router.get('/getEmptyImageIPD', function(req, res, next) {
+    imgPath = "\\\\hjh-queue-01\\door_signage_images\\empty_ipd.jpg";
+    fs.access(imgPath, fs.constants.F_OK, err => {
+      console.log(`${imgPath} ${err ? "does not exist" : "exists"}`);
+    });
+    fs.readFile(imgPath, function(err, content) {
+      if (err) {
+        res.writeHead(404, { "Content-type" : "text/html" });
+        res.end(imgPath + "<h1> No Update </h1>");
+      } else {
+        res.writeHead(200, {"Content-type" : "image/png"});
         res.end(content);
       }
     });

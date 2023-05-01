@@ -17,9 +17,8 @@ async function getAllData() {
  
 async function getDuration() {
     try {
-      var query = `SELECT ConfigKey, ConfigValue
-FROM            tblConfiguration
-WHERE        (ConfigKey = 'Duration')`;
+      var query = `select *
+      from [dbo].[alyGetConfigurationForDoorSignageByKey]('Duration')`;
 console.log(" query :" + query);
       let pool = await sql.connect(config.config_queue);
       let res = await pool.request().query(query,);
@@ -31,19 +30,8 @@ console.log(" query :" + query);
  
 async function getConfiguration() {
     try {
-      var query = `select duration, doctorNameENTop, doctorNameENFontSize, doctorNameARTop, doctorNameARFontSize, specialtyENTop, specialtyENFontSize, specialtyARTop, specialtyARFontSize
-      , clinicDateTop, clinicDateFontSize
-      from
-      (
-        select ConfigValue, ConfigKey
-        from tblConfiguration
-      ) d
-      pivot
-      (
-        max(ConfigValue)
-        for ConfigKey in (duration, doctorNameENTop, doctorNameENFontSize, doctorNameARTop, doctorNameARFontSize, specialtyENTop, specialtyENFontSize, specialtyARTop, specialtyARFontSize
-      , clinicDateTop, clinicDateFontSize)
-      ) piv`;
+      var query = `select *
+      from dbo.alyGetConfigurationForDoorSignage()`;
 // console.log(" query :" + query);
       let pool = await sql.connect(config.config_queue);
       let res = await pool.request().query(query,);
@@ -55,11 +43,8 @@ async function getConfiguration() {
  
 async function getDataByClinicID(cliniID=1) {
     try {
-      var query = `SELECT        
-	  ID, DoctorNameAR, DoctorNameEN, ClinicID, SpecialtyAR, SpecialtyEN, ClinicStartDate, ClinicEndDate, 
-	  'http://10.102.111.88:1020/api/getImageByID/' +cast(id as varchar) as ImagePath, ImageBinary
-      FROM            Room
-        WHERE ID = @RoomID`;
+      var query = `select *
+        from dbo.alyGetClinicDataByID(@RoomID)`;
       let pool = await sql.connect(config.config_queue);
       let res = await pool.request().input('RoomID', sql.Int, cliniID).query(query,);
       return res.recordsets[0][0];
@@ -127,9 +112,7 @@ async function getImageEmptyByID(cliniID=1) {
 
 module.exports = {
   getImageEmptyByID: getImageEmptyByID,
-  getAllClinics: getAllData,
   getClinicByID: getDataByClinicID,
-  getAllClinics: getAllData,
   getClinicEmptyByIPAddress: getClinicEmptyByIPAddress,
   getClinicByIPAddress: getClinicByIPAddress,
   getImageByID: getImageByID,
