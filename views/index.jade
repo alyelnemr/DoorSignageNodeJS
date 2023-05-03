@@ -1,5 +1,67 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to11 #{title}
+  br
+  br
+  h1 #{title}
+  br
+  br
+  form(name="ipd_rooms_form", method='POST', action='/api/SaveRoomSetup')
+    label.roomlbl(for='rooms') Please select a room:
+    select#rooms.room(name='rooms')
+      each item, i in arr_rooms
+        option(value='#{item.ID}') #{item.Name}
+    br
+    br
+    br
+    br
+
+    table.myOtherTable
+      tbody
+        tr
+          th(colspan='2', align='center') Patient's Data
+        tr
+          td
+            | Fall Risk
+          td
+            input#fall(type='checkbox', name='IsIPDImage1', value='1')
+        tr
+          td
+            | NPO
+          td
+            input#npo(type='checkbox', name='IsIPDImage2', value='1')
+        tr
+          td
+            | Allergy
+          td
+            input#allergy(type='checkbox', name='IsIPDImage3', value='1')
+        tr
+          td
+            | RT
+          td
+            input#rt(type='checkbox', name='IsIPDImage4', value='1')
+        tr
+          td
+            | LT
+          td
+            input#lt(type='checkbox', name='IsIPDImage5', value='1')
+        tr
+          td
+            | Airbrone Precautions
+          td
+            input#airbrone(type='checkbox', name='IsIPDImage6', value='1')
+        tr
+          td
+            | Contact Precautions
+          td
+            input#contact(type='checkbox', name='IsIPDImage7', value='1')
+        tr
+          td
+            | Droplet Precautions
+          td
+            input#droplet(type='checkbox', name='IsIPDImage8', value='1')
+            
+        tr
+          td(colspan='2', align='center')
+            input#save(type='submit', value='Save')
+            

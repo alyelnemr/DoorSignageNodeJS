@@ -1,7 +1,79 @@
 doctype html
 html
   head
+    style(type='text/css').
+      .myOtherTable { width:50%;background-color:#FFFFE0;border-collapse:collapse;color:#000;font-size:18px; }
+      .myOtherTable th { background-color:#BDB76B;color:white;width:100%;font-variant:small-caps; }
+      .myOtherTable td, .myOtherTable th { padding:5px;border:0; }
+      .myOtherTable td { font-family:Georgia, Garamond, serif; border-bottom:1px solid #BDB76B;height:40px; }
+      .col { font-family:Georgia, Garamond, serif; height:40px; }
+      .room { font-family:Georgia, Garamond, serif; height:40px; }
+      .roomlbl { background-color:#FFFFE0;color:black;width:100%;font-variant:small-caps; font-size:25px;}
+    // End Styles
+    script(src="https://code.jquery.com/jquery-3.5.1.min.js", crossorigin="anonymous")
+    script(type="text/javascript").
+      function message()
+      {
+          document.querySelector("#rooms").addEventListener("change", (e) => {
+            var ch1 = document.querySelector("#fall");
+            var ch2 = document.querySelector("#npo");
+            var ch3 = document.querySelector("#allergy");
+            var ch4 = document.querySelector("#rt");
+            var ch5 = document.querySelector("#lt");
+            var ch6 = document.querySelector("#airbrone");
+            var ch7 = document.querySelector("#contact");
+            var ch8 = document.querySelector("#droplet");
+            ch1.checked = '';
+            ch2.checked = '';
+            ch3.checked = '';
+            ch4.checked = '';
+            ch5.checked = '';
+            ch6.checked = '';
+            ch7.checked = '';
+            ch8.checked = '';
+            if(document.querySelector("#rooms").value > 0){
+              $.ajax({
+                url: 'http://hjh-queue-01:1020/api/getroomsetup/' + document.querySelector("#rooms").value,
+                method: 'GET',
+                dataType: "JSON",
+              }).done(function(value) {
+                if (value.IsIPDImage1 == 1)
+                {
+                  ch1.checked = 'checked';
+                }
+                if (value.IsIPDImage2 == 1)
+                {
+                  ch2.checked = 'checked';
+                }
+                if (value.IsIPDImage3 == 1)
+                {
+                  ch3.checked = 'checked';
+                }
+                if (value.IsIPDImage4 == 1)
+                {
+                  ch4.checked = 'checked';
+                }
+                if (value.IsIPDImage5 == 1)
+                {
+                  ch5.checked = 'checked';
+                }
+                if (value.IsIPDImage6 == 1)
+                {
+                  ch6.checked = 'checked';
+                }
+                if (value.IsIPDImage7 == 1)
+                {
+                  ch7.checked = 'checked';
+                }
+                if (value.IsIPDImage8 == 1)
+                {
+                  ch8.checked = 'checked';
+                }
+              });
+            }
+          });
+      }
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-  body
+  body(onload="message()")
     block content

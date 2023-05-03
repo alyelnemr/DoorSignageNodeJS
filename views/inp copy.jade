@@ -1,0 +1,70 @@
+html(lang='en')
+  // Start Styles. Move the 'style' tags and everything between them to between the 'head' tags
+  head
+    style(type='text/css').
+      .myOtherTable { width:50%;background-color:#FFFFE0;border-collapse:collapse;color:#000;font-size:18px; }
+      .myOtherTable th { background-color:#BDB76B;color:white;width:100%;font-variant:small-caps; }
+      .myOtherTable td, .myOtherTable th { padding:5px;border:0; }
+      .myOtherTable td { font-family:Georgia, Garamond, serif; border-bottom:1px solid #BDB76B;height:40px; }
+      .col { font-family:Georgia, Garamond, serif; height:40px; }
+      .room { font-family:Georgia, Garamond, serif; height:40px; }
+      .roomlbl { background-color:#FFFFE0;color:black;width:100%;font-variant:small-caps; font-size:25px;}
+    // End Styles
+    title Jade
+  body
+    h1 Inpatient Door Signage data
+    br
+    br
+    #container.col
+      label.roomlbl(for='rooms') Please select a room:
+      select#rooms.room(name='rooms')
+        each item in arr_rooms
+          option(value='1') item.Name
+      br
+      br
+      br
+      br
+      table.myOtherTable
+        tbody
+          tr
+            th Patient's Data
+          tr
+            td
+              | Fall Risk
+            td
+              input#fall(type='checkbox' name='fall' value='1')
+          tr
+            td
+              | NPO
+            td
+              input#npo(type='checkbox' name='npo' value='1')
+          tr
+            td
+              | Allergy
+            td
+              input#allergy(type='checkbox' name='allergy' value='1')
+          tr
+            td
+              | RT
+            td
+              input#rt(type='checkbox' name='rt' value='1')
+          tr
+            td
+              | LT
+            td
+              input#lt(type='checkbox' name='lt' value='1')
+          tr
+            td
+              | Airbrone Precautions
+            td
+              input#airbrone(type='checkbox' name='airbrone' value='1')
+          tr
+            td
+              | Contact Precautions
+            td
+              input#contact(type='checkbox' name='contact' value='1')
+          tr
+            td
+              | Droplet Precautions
+            td
+              input#droplet(type='checkbox' name='droplet' value='1')

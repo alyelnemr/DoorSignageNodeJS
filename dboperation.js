@@ -4,17 +4,66 @@ const sql2 = require("msnodesqlv8");
  
 
 async function getAllData() {
-    try {
-      var query = `SELECT       *
-        FROM tblDoctorSchedule`;
-      let pool = await sql.connect(config.config_queue);
-      let res = await pool.request().query(query,);
-      return res.recordsets[0];
-    } catch (error) {
-      console.log(" db-error :" + error);
-    }
+  try {
+    var query = `SELECT       *
+      FROM tblDoctorSchedule`;
+    let pool = await sql.connect(config.config_queue);
+    let res = await pool.request().query(query,);
+    return res.recordsets[0];
+  } catch (error) {
+    console.log(" db-error :" + error);
   }
- 
+}
+
+
+async function getIPDRoomByID(roomID=0) {
+  try {
+    var query = `select *
+    from vwGetIPDRoomByID
+    where id = @RoomID`;
+    let pool = await sql.connect(config.config_queue);
+    let res = await pool.request().input('RoomID', sql.Int, roomID).query(query,);
+    return res.recordsets[0];
+  } catch (error) {
+    console.log(" db-error :" + error);
+  }
+}
+
+
+async function updateIPDRoomByID(roomID=0, Image1=0,Image2=0,Image3=0,Image4=0,Image5=0,Image6=0,Image7=0,Image8=0,) {
+  try {
+    
+    let pool = await sql.connect(config.config_queue);
+    let res = await pool.request()
+                            .input('RoomID', sql.Int, roomID)
+                            .input('Image1', sql.Int, Image1)
+                            .input('Image2', sql.Int, Image2)
+                            .input('Image3', sql.Int, Image3)
+                            .input('Image4', sql.Int, Image4)
+                            .input('Image5', sql.Int, Image5)
+                            .input('Image6', sql.Int, Image6)
+                            .input('Image7', sql.Int, Image7)
+                            .input('Image8', sql.Int, Image8)
+                            .execute("aly_update_ipd_room_properties");
+    return res.recordsets[0];
+  } catch (error) {
+    console.log(" db-error :" + error);
+  }
+}
+
+
+async function getAllIPDRooms() {
+  try {
+    var query = `select *
+    from vwGetIPDRoomAll`;
+    let pool = await sql.connect(config.config_queue);
+    let res = await pool.request().query(query,);
+    return res.recordsets[0];
+  } catch (error) {
+    console.log(" db-error :" + error);
+  }
+}
+
 async function getDuration() {
     try {
       var query = `select *
@@ -117,5 +166,8 @@ module.exports = {
   getClinicByIPAddress: getClinicByIPAddress,
   getImageByID: getImageByID,
   getConfiguration: getConfiguration,
-  getDuration: getDuration
+  getDuration: getDuration,
+  getAllIPDRooms: getAllIPDRooms,
+  getIPDRoomByID: getIPDRoomByID,
+  updateIPDRoomByID: updateIPDRoomByID
 };

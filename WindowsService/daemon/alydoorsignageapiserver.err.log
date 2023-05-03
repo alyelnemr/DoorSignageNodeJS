@@ -1,13 +1,8 @@
-ReferenceError: C:\Aly\api_server\views\error.jade:4
-    2| 
-    3| block content
-  > 4|   h1= message
-    5|   h2= error.status
-    6|   pre #{error.stack}
-    7| 
+ReferenceError: C:\Aly\api_server\views\error.jade:76
+
 
 title is not defined
-    at eval (eval at exports.compile (C:\Aly\api_server\node_modules\jade\lib\jade.js:171:8), <anonymous>:18:58)
+    at eval (eval at exports.compile (C:\Aly\api_server\node_modules\jade\lib\jade.js:171:8), <anonymous>:309:58)
     at C:\Aly\api_server\node_modules\jade\lib\jade.js:172:35
     at exports.render (C:\Aly\api_server\node_modules\jade\lib\jade.js:206:14)
     at exports.renderFile [as engine] (C:\Aly\api_server\node_modules\jade\lib\jade.js:233:13)
@@ -17,16 +12,11 @@ title is not defined
     at ServerResponse.render (C:\Aly\api_server\node_modules\express\lib\response.js:1039:7)
     at C:\Aly\api_server\app.js:40:7
     at Layer.handle_error (C:\Aly\api_server\node_modules\express\lib\router\layer.js:71:5)
-ReferenceError: C:\Aly\api_server\views\error.jade:4
-    2| 
-    3| block content
-  > 4|   h1= message
-    5|   h2= error.status
-    6|   pre #{error.stack}
-    7| 
+ReferenceError: C:\Aly\api_server\views\error.jade:77
+
 
 title is not defined
-    at eval (eval at exports.compile (C:\Aly\api_server\node_modules\jade\lib\jade.js:171:8), <anonymous>:18:58)
+    at eval (eval at exports.compile (C:\Aly\api_server\node_modules\jade\lib\jade.js:171:8), <anonymous>:313:58)
     at C:\Aly\api_server\node_modules\jade\lib\jade.js:172:35
     at exports.render (C:\Aly\api_server\node_modules\jade\lib\jade.js:206:14)
     at exports.renderFile [as engine] (C:\Aly\api_server\node_modules\jade\lib\jade.js:233:13)
@@ -36,16 +26,11 @@ title is not defined
     at ServerResponse.render (C:\Aly\api_server\node_modules\express\lib\response.js:1039:7)
     at C:\Aly\api_server\app.js:40:7
     at Layer.handle_error (C:\Aly\api_server\node_modules\express\lib\router\layer.js:71:5)
-ReferenceError: C:\Aly\api_server\views\error.jade:4
-    2| 
-    3| block content
-  > 4|   h1= message
-    5|   h2= error.status
-    6|   pre #{error.stack}
-    7| 
+ReferenceError: C:\Aly\api_server\views\error.jade:80
+
 
 title is not defined
-    at eval (eval at exports.compile (C:\Aly\api_server\node_modules\jade\lib\jade.js:171:8), <anonymous>:18:58)
+    at eval (eval at exports.compile (C:\Aly\api_server\node_modules\jade\lib\jade.js:171:8), <anonymous>:325:58)
     at C:\Aly\api_server\node_modules\jade\lib\jade.js:172:35
     at exports.render (C:\Aly\api_server\node_modules\jade\lib\jade.js:206:14)
     at exports.renderFile [as engine] (C:\Aly\api_server\node_modules\jade\lib\jade.js:233:13)
@@ -55,16 +40,39 @@ title is not defined
     at ServerResponse.render (C:\Aly\api_server\node_modules\express\lib\response.js:1039:7)
     at C:\Aly\api_server\app.js:40:7
     at Layer.handle_error (C:\Aly\api_server\node_modules\express\lib\router\layer.js:71:5)
-ReferenceError: C:\Aly\api_server\views\error.jade:4
-    2| 
-    3| block content
-  > 4|   h1= message
-    5|   h2= error.status
-    6|   pre #{error.stack}
-    7| 
+ReferenceError: C:\Aly\api_server\views\error.jade:81
+
 
 title is not defined
-    at eval (eval at exports.compile (C:\Aly\api_server\node_modules\jade\lib\jade.js:171:8), <anonymous>:18:58)
+    at eval (eval at exports.compile (C:\Aly\api_server\node_modules\jade\lib\jade.js:171:8), <anonymous>:329:58)
+    at C:\Aly\api_server\node_modules\jade\lib\jade.js:172:35
+    at exports.render (C:\Aly\api_server\node_modules\jade\lib\jade.js:206:14)
+    at exports.renderFile [as engine] (C:\Aly\api_server\node_modules\jade\lib\jade.js:233:13)
+    at View.render (C:\Aly\api_server\node_modules\express\lib\view.js:135:8)
+    at tryRender (C:\Aly\api_server\node_modules\express\lib\application.js:657:10)
+    at Function.render (C:\Aly\api_server\node_modules\express\lib\application.js:609:3)
+    at ServerResponse.render (C:\Aly\api_server\node_modules\express\lib\response.js:1039:7)
+    at C:\Aly\api_server\app.js:40:7
+    at Layer.handle_error (C:\Aly\api_server\node_modules\express\lib\router\layer.js:71:5)
+ReferenceError: C:\Aly\api_server\views\error.jade:80
+
+
+title is not defined
+    at eval (eval at exports.compile (C:\Aly\api_server\node_modules\jade\lib\jade.js:171:8), <anonymous>:325:58)
+    at C:\Aly\api_server\node_modules\jade\lib\jade.js:172:35
+    at exports.render (C:\Aly\api_server\node_modules\jade\lib\jade.js:206:14)
+    at exports.renderFile [as engine] (C:\Aly\api_server\node_modules\jade\lib\jade.js:233:13)
+    at View.render (C:\Aly\api_server\node_modules\express\lib\view.js:135:8)
+    at tryRender (C:\Aly\api_server\node_modules\express\lib\application.js:657:10)
+    at Function.render (C:\Aly\api_server\node_modules\express\lib\application.js:609:3)
+    at ServerResponse.render (C:\Aly\api_server\node_modules\express\lib\response.js:1039:7)
+    at C:\Aly\api_server\app.js:40:7
+    at Layer.handle_error (C:\Aly\api_server\node_modules\express\lib\router\layer.js:71:5)
+ReferenceError: C:\Aly\api_server\views\error.jade:80
+
+
+title is not defined
+    at eval (eval at exports.compile (C:\Aly\api_server\node_modules\jade\lib\jade.js:171:8), <anonymous>:325:58)
     at C:\Aly\api_server\node_modules\jade\lib\jade.js:172:35
     at exports.render (C:\Aly\api_server\node_modules\jade\lib\jade.js:206:14)
     at exports.renderFile [as engine] (C:\Aly\api_server\node_modules\jade\lib\jade.js:233:13)
