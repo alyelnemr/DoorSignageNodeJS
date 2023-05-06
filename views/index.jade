@@ -7,6 +7,7 @@ block content
   br
   br
   form(name="ipd_rooms_form", method='POST', action='/api/SaveRoomSetup')
+    br
     label.roomlbl(for='rooms') Please select a room:
     select#rooms.room(name='rooms')
       each item, i in arr_rooms
@@ -15,11 +16,27 @@ block content
     br
     br
     br
-
     table.myOtherTable
       tbody
         tr
           th(colspan='2', align='center') Patient's Data
+        tr
+          td
+            | Patient Name
+          td
+            input#patientname(type='text', name='patientname', class='patientname', value='', disabled)
+        tr
+          td
+            | Patient ID
+          td
+            input#patientid(type='text', name='patientid', class='patientname', value='', disabled)
+        tr
+          td
+            | Doctor Name
+          td
+            input#doctorname(type='text', name='doctorname', class='patientname', value='', disabled)
+        tr
+          td(colspan=2)
         tr
           td
             | Fall Risk

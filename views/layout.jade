@@ -8,6 +8,7 @@ html
       .myOtherTable td { font-family:Georgia, Garamond, serif; border-bottom:1px solid #BDB76B;height:40px; }
       .col { font-family:Georgia, Garamond, serif; height:40px; }
       .room { font-family:Georgia, Garamond, serif; height:40px; }
+      .patientname { font-family:Georgia, font-size: 20px; Garamond, serif; width:500px; }
       .roomlbl { background-color:#FFFFE0;color:black;width:100%;font-variant:small-caps; font-size:25px;}
     // End Styles
     script(src="https://code.jquery.com/jquery-3.5.1.min.js", crossorigin="anonymous")
@@ -15,6 +16,7 @@ html
       function message()
       {
           document.querySelector("#rooms").addEventListener("change", (e) => {
+            var txtPatientName = document.querySelector("#patientname");
             var ch1 = document.querySelector("#fall");
             var ch2 = document.querySelector("#npo");
             var ch3 = document.querySelector("#allergy");
@@ -37,6 +39,9 @@ html
                 method: 'GET',
                 dataType: "JSON",
               }).done(function(value) {
+                document.querySelector("#patientname").value = value['patientname'];
+                document.querySelector("#patientid").value = value['patientfilenumber'];
+                document.querySelector("#doctorname").value = value['doctorname'];
                 if (value.IsIPDImage1 == 1)
                 {
                   ch1.checked = 'checked';
@@ -73,7 +78,7 @@ html
             }
           });
       }
-    title= title
+    title= 'title'
     link(rel='stylesheet', href='/stylesheets/style.css')
   body(onload="message()")
     block content

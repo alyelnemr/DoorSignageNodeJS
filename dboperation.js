@@ -19,7 +19,7 @@ async function getAllData() {
 async function getIPDRoomByID(roomID=0) {
   try {
     var query = `select *
-    from vwGetIPDRoomByID
+    from aly_vwGetIPDRoomByID
     where id = @RoomID`;
     let pool = await sql.connect(config.config_queue);
     let res = await pool.request().input('RoomID', sql.Int, roomID).query(query,);
@@ -55,9 +55,10 @@ async function updateIPDRoomByID(roomID=0, Image1=0,Image2=0,Image3=0,Image4=0,I
 async function getAllIPDRooms() {
   try {
     var query = `select *
-    from vwGetIPDRoomAll`;
+    from aly_vwGetIPDRoomAll`;
     let pool = await sql.connect(config.config_queue);
     let res = await pool.request().query(query,);
+    console.log('all ipd rooms: ' + res.recordsets[0]);
     return res.recordsets[0];
   } catch (error) {
     console.log(" db-error :" + error);

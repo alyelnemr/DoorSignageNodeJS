@@ -18,6 +18,7 @@ router.get('/RoomSetup/', function(req, res, next) {
 
   var result = sql.getAllIPDRooms().then((value) => {
     res.render('index', { title: title, arr_rooms: value });
+    // res.status(200).send(value);
   });
 });
 
