@@ -35,7 +35,7 @@ html
             ch8.checked = '';
             if(document.querySelector("#rooms").value > 0){
               $.ajax({
-                url: 'http://hjh-queue-01:1020/api/getroomsetup/' + document.querySelector("#rooms").value,
+                url: 'http://ahj-queue.andalusiagroup.net:1020/getroomsetup/' + document.querySelector("#rooms").value,
                 method: 'GET',
                 dataType: "JSON",
               }).done(function(value) {
