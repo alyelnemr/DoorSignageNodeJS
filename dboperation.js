@@ -30,7 +30,7 @@ async function getIPDRoomByID(roomID=0) {
 }
 
 
-async function updateIPDRoomByID(roomID=0, Image1=0,Image2=0,Image3=0,Image4=0,Image5=0,Image6=0,Image7=0,Image8=0,) {
+async function updateIPDRoomByID(roomID=0, userName='', Image1=0,Image2=0,Image3=0,Image4=0,Image5=0,Image6=0,Image7=0,Image8=0,) {
   try {
     
     let pool = await sql.connect(config.config_queue);
@@ -44,6 +44,7 @@ async function updateIPDRoomByID(roomID=0, Image1=0,Image2=0,Image3=0,Image4=0,I
                             .input('Image6', sql.Int, Image6)
                             .input('Image7', sql.Int, Image7)
                             .input('Image8', sql.Int, Image8)
+                            .input('Username', sql.VarChar, userName)
                             .execute("aly_update_ipd_room_properties");
     return res.recordsets[0];
   } catch (error) {

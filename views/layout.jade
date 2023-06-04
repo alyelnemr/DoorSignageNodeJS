@@ -35,13 +35,14 @@ html
             ch8.checked = '';
             if(document.querySelector("#rooms").value > 0){
               $.ajax({
-                url: 'http://ahj-queue.andalusiagroup.net:1020/getroomsetup/' + document.querySelector("#rooms").value,
+                url: 'http://ahj-queue.andalusiagroup.net:1020/users/getroomsetup/' + document.querySelector("#rooms").value,
                 method: 'GET',
                 dataType: "JSON",
               }).done(function(value) {
                 document.querySelector("#patientname").value = value['patientname'];
                 document.querySelector("#patientid").value = value['patientfilenumber'];
                 document.querySelector("#doctorname").value = value['doctorname'];
+                document.querySelector("#doctorid").value = value['doctorid'];
                 if (value.IsIPDImage1 == 1)
                 {
                   ch1.checked = 'checked';

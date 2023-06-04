@@ -6,7 +6,7 @@ block content
   h1 #{title}
   br
   br
-  form(name="ipd_rooms_form", method='POST', action='/api/SaveRoomSetup')
+  form(name="ipd_rooms_form", method='POST', action='/users/SaveRoomSetup')
     br
     label.roomlbl(for='rooms') Please select a room:
     select#rooms.room(name='rooms')
@@ -35,6 +35,16 @@ block content
             | Doctor Name
           td
             input#doctorname(type='text', name='doctorname', class='patientname', value='', disabled)
+        tr
+          td
+            | Doctor ID
+          td
+            input#doctorid(type='text', name='doctorid', class='patientname', value='', disabled)
+        //- tr
+        //-   td
+        //-     | User ID
+        //-   td
+        //-     input#userid(type='text', name='userid', class='patientname', value=user, disabled)
         tr
           td(colspan=2)
         tr
